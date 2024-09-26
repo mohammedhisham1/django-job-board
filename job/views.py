@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.contrib.auth.models import User
+from .filters import JobFilter
 
 from . import models
 # Create your views here.
@@ -10,11 +11,16 @@ from django.contrib.auth.decorators import login_required
 
 def job_list(request):
     job_list = models.Job.objects.all()
+    # filters
+    myfilter = JobFilter(request.GET,queryset=job_list)
+    job_list = myfilter.qs
+    
     paginator = Paginator(job_list, 1)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
-    context = {"jobs":page_obj,'tot_job':job_list}
+
+    context = {"jobs":page_obj,'tot_job':job_list,'myfilter':myfilter}
     return render(request,"job/job_list.html",context)
 
 
