@@ -8,4 +8,5 @@ tzdata==2025.2
 wheel==0.45.1
 django-bootstrap4==2.0.1
 django-filter==2.3.0
+distutils
 gunicorn
