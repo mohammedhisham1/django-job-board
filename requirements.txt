@@ -2,6 +2,7 @@ asgiref==3.8.1
 beautifulsoup4==4.13.4
 bootstrap4==0.1.0
 django==3.2.20
+whitenoise>=6.9
 django-bootstrap4==2.0.1
 django-filter==2.3.0
 gunicorn==23.0.0
