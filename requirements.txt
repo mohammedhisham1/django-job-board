@@ -1,3 +1,4 @@
+python_version=="3.9.*"
 asgiref==3.8.1
 bootstrap4==0.1.0
 Django==3.2
